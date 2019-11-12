@@ -12,8 +12,8 @@ routeur.post('/', (req, res) => {
         element: elements
     })
     todoelement.save()
-    .then((result) => { res.status(200).json({message:"succes : " + result}) })
-    .catch((err) => { res.status(500).json({message: "error : " + err})})
+    .then((result) => { res.redirect('http://localhost:3000') })
+    .catch((err) => { res.redirect('http://localhost:3000')})
 })
 
 routeur.get('/', (req, res) => {
@@ -27,16 +27,11 @@ routeur.get('/', (req, res) => {
     })
 })
 
-routeur.delete('/delete/:id', (req, res) => {
-    console.log(req.params.id);
-    todoElement.deleteOne({element: req.params.id}, (err, result) => {
-        if (err) {
-            res.status(400).json({message: "there is a probleme when deleting the element !"})
-        } else {
-            console.log(result)
-            res.render(200,'/')
-        }
-    })
+routeur.get('/delete/:idTodo', (req, res) => {
+    todoElement.remove({ _id: req.params.idTodo })
+        .exec()
+        .then(res => { res.redirect("http://localhost:3000");})
+        .catch(err => { res.redirect("http://localhost:3000");})
 })
 
 module.exports = routeur

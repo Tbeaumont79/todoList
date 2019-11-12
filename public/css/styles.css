@@ -98,3 +98,17 @@ footer {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+.danger {
+  margin-left: 10%;
+  text-decoration: none;
+  color:#fff;
+  font-size: 15px;
+  border: 2px solid #9c2323;
+  background: #9c2323;
+  padding: 10px;
+  border-radius: 50px;
+  opacity: 70%;
+}
+.danger:hover {
+  opacity: 100%;
+}

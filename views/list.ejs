@@ -9,7 +9,7 @@
       <div class="item">
         <input type="checkbox">
         <p><%=  newListItems[i].element  %></p>
-        <button type="submit" name="delete" class="delete">-</button>
+        <a class="danger" href="/delete/<%= newListItems[i].id %>">Delete</a>
       </div>
       <% } %>
 
