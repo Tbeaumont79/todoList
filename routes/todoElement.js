@@ -30,7 +30,7 @@ routeur.get('/', (req, res) => {
 routeur.get('/delete/:idTodo', (req, res) => {
     todoElement.remove({ _id: req.params.idTodo })
         .exec()
-        .then(res => { res.redirect("http://localhost:3000");})
+        .then(result => { res.redirect("http://localhost:3000");})
         .catch(err => { res.redirect("http://localhost:3000");})
 })
 
