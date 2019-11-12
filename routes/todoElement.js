@@ -1,4 +1,3 @@
-const mongoose = require('mongoose')
 const todoElement = require('../modele/todoElement')
 const bodyParser = require('body-parser')
 const express = require('express')
