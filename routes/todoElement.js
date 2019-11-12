@@ -27,4 +27,16 @@ routeur.get('/', (req, res) => {
     })
 })
 
+routeur.delete('/delete/:id', (req, res) => {
+    console.log(req.params.id);
+    todoElement.deleteOne({element: req.params.id}, (err, result) => {
+        if (err) {
+            res.status(400).json({message: "there is a probleme when deleting the element !"})
+        } else {
+            console.log(result)
+            res.render(200,'/')
+        }
+    })
+})
+
 module.exports = routeur

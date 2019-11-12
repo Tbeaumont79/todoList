@@ -25,10 +25,10 @@ mongoose.connect('mongodb://localhost:27017/todolistDB', {
 });
 
 
-app.get('/about', about);
+app.get("/about", about);
 app.get("/", todoElement);
-
-app.post("/", todoElement);
+app.delete("/", todoElement);
+app.post("/delete", todoElement);
 
 
 app.get("/about", about);

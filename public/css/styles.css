@@ -43,6 +43,10 @@ input[type="checkbox"] {
   margin: 20px;
 }
 
+.delete {
+  margin-left: 25%;
+}
+
 p {
   margin: 0;
   padding: 20px;
